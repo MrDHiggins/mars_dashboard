@@ -9,6 +9,7 @@ import Header from "./components/header/Header";
 
 function App() {
   const [data, setData] = useState('');
+  const [selectedRover, setSelectedRover] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +25,7 @@ function App() {
 
   return (
     <BrowserRouter>
-        <Header />
+        <Header setSelectedRover={setSelectedRover} />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='about' element={<About />} />
