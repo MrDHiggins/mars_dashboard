@@ -8,15 +8,16 @@ function RoverSelection({ setSelectedRover }) {
     rovers: Immutable.List(['Curiosity', 'Opportunity', 'Spirit']),
     selectedRover: '',
   });
-
-  const [rovers, setRover] = useState(store.get('rovers').toJS());
-
+  
+  const [rovers, setRover] = useState(store.get('rovers'));
+    
   const handleRoverSelection = (event, rovers) => {
     event.preventDefault();
     const selectedRover = event.target.value;
     setSelectedRover(selectedRover); // update selectedRover in the parent component
     const updatedRovers = rovers.set('selectedRover', selectedRover);
-    setRover(updatedRovers.get(selectedRover));
+    setRover(updatedRovers);
+    console.log(selectedRover);
   };
 
   const roverButtons = rovers.map((rover) => {
