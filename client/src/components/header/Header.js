@@ -1,7 +1,7 @@
 import React from 'react';
-import RoverSelection from './rover/RoverSelection'
+import RoverSelection from '../rover/RoverSelection';
 
-function Header() {
+function Header( {setSelectedRover }) {
   return (
     <div className='bg-red-500'>
 
@@ -14,8 +14,8 @@ function Header() {
         {/* Create welcome martian text in center of div*/}
         <div className='flex justify-center items-center w-full'>
           <h1 className='text-4xl text-white'>Welcome Martian</h1>
-          <RoverSelection />
-        </div>
+          <RoverSelection setSelectedRover={setSelectedRover} />
+            </div>
       </div>
 
     </div>
