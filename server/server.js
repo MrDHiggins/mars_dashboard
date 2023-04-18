@@ -10,11 +10,11 @@ const PORT = process.env.PORT;
 app.use(cors());
 
 
-app.get('/rovers/curiosity/photos', async (req, res) => {
-    // app.get('/rovers/:name/photos', async (req, res) => {
-    // const { name } = req.params;
+// app.get('/rovers/curiosity/photos', async (req, res) => {
+    app.get('/rovers/:name/photos', async (req, res) => {
+    const { name } = req.params;
       try {
-        const roverData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=qxci2ymt4PjY5bEupv0SVMt1nkb4LfzRJhKUU18g`)
+        const roverData = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${name}/latest_photos?api_key=qxci2ymt4PjY5bEupv0SVMt1nkb4LfzRJhKUU18g`)
           .then(res => res.json());
         res.send(roverData);
         // console.log(roverData)

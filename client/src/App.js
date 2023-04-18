@@ -13,15 +13,14 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      fetch("http://localhost:5000/rovers/curiosity/photos")
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data.latest_photos[0]);
-        });
+      if (selectedRover) { // Add a conditional to only fetch data when `selectedRover` has a value
+        const response = await fetch(`http://localhost:5000/rovers/${selectedRover}/photos`);
+        const data = await response.json();
+        setData(data.latest_photos[0]);
+      }
     };
     fetchData();
-  }, []);
-  
+  }, [selectedRover]); // Include `selectedRover` in the dependency array
 
   return (
     <BrowserRouter>

@@ -17,7 +17,7 @@ function RoverSelection({ setSelectedRover }) {
     setSelectedRover(selectedRover); // update selectedRover in the parent component
     const updatedRovers = rovers.set('selectedRover', selectedRover);
     setRover(updatedRovers);
-    console.log(selectedRover);
+    // console.log(selectedRover);
   };
 
   const roverButtons = rovers.map((rover) => {
