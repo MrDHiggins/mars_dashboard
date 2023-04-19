@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Immutable from 'immutable';
+import {useNavigate} from "react-router-dom"
 
 function RoverSelection({ setSelectedRover }) {
   const store = Immutable.Map({
@@ -10,6 +11,7 @@ function RoverSelection({ setSelectedRover }) {
   });
   
   const [rovers, setRover] = useState(store.get('rovers'));
+  const navigate = useNavigate();
     
   const handleRoverSelection = (event, rovers) => {
     event.preventDefault();
@@ -17,7 +19,7 @@ function RoverSelection({ setSelectedRover }) {
     setSelectedRover(selectedRover); // update selectedRover in the parent component
     const updatedRovers = rovers.set('selectedRover', selectedRover);
     setRover(updatedRovers);
-    // console.log(selectedRover);
+    navigate(`/${selectedRover}`);
   };
 
   const roverButtons = rovers.map((rover) => {
