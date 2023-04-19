@@ -25,7 +25,7 @@ function RoverSelection({ setSelectedRover }) {
   const roverButtons = rovers.map((rover) => {
     return (
       <button
-        className="flex flex-col h-4 w-4 bg-red-100"
+        className="rounded hover:rounded border-2 border-green-500 hover:border-green-600 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 m border-b-4 border-black"
         key={rover}
         value={rover}
         onClick={(event) => handleRoverSelection(event, rovers)}
@@ -38,7 +38,7 @@ function RoverSelection({ setSelectedRover }) {
   return (
     <div className="rover__selection__menu">
       <div className="flex flex-col">
-        <div className="h-80% w-80% bg-orange-400">{roverButtons}</div>
+        <div>{roverButtons}</div>
       </div>
     </div>
   );
