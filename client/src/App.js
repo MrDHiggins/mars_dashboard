@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link, NavLink, BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 //Pages
-import Home from "./pages/Home";
 import About from "./pages/About";
 import Header from "./components/header/Header";
 
@@ -26,10 +25,8 @@ function App() {
     <BrowserRouter>
         <Header setSelectedRover={setSelectedRover} />
         <Routes>
-          <Route index element={<Home />} />
           <Route path={`/${selectedRover}`} element={<About data={data} selectedRover={selectedRover} />} />
         </Routes>
-        <Link to={`/${selectedRover}`}>{selectedRover}</Link>
     </BrowserRouter>
   );
 }
