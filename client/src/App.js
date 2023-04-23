@@ -15,7 +15,7 @@ function App() {
       if (selectedRover) {
         const response = await fetch(`http://localhost:5000/rovers/${selectedRover}/photos`);
         const data = await response.json();
-        setData(data.latest_photos[0]);
+        setData(data);
       }
     };
     fetchData();

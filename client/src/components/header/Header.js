@@ -17,6 +17,7 @@ function Header( {setSelectedRover }) {
         </div>
       </div>
       <RoverSelection setSelectedRover={setSelectedRover} />
+      
     </div>
   )
 }
