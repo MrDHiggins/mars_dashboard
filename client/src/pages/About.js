@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+const Immutable = require('immutable'); // import immutable module
 
 function About({ data, selectedRover }) {
-  let imgSrcArray = [];
-  if (data) {
+  
+  
+  const newData = Immutable.Map({...data}).toJS()
+  // setRover(data)
+  // let latestData = newData.merge(newData).toJS();
+  // latestData = latestData.toJS();
+
+
+  // if (data) {
     // imgSrcArray = data.latest_photos.map((item) => ({
     //   name: item.name,
     //   landing_date: item.landing_date,
@@ -12,22 +20,22 @@ function About({ data, selectedRover }) {
     //   status: item.status,
     //   img_src: item.img_src
     // }));
-    console.log(data);
-  }
+    //console.log(data);
+  // }
 
-  console.log(imgSrcArray);
   // const imgSrcArray = data.latest_photos.map((item) => item.img_src);
   // console.log(imgSrcArray);
-  // const { rover, img_src, latest_photos } = data;
+ 
   return (
     <div>
       <h2>{selectedRover}</h2>
+      {console.log(newData.latest_photos)}
 
       {/* <div>
-      <p>Rover Name: {data?.name}</p>
-<p>Landing Date: {data?.landing_date}</p>
-<p>Launch Date: {data?.launch_date}</p>
-<p>Status: {data?.status}</p>
+      <p>Rover Name: {newData.latest_photos[0].rover.name}</p>
+<p>Landing Date: {newData.latest_photos[0].rover.landing_date}</p>
+<p>Launch Date: {newData.latest_photos[0].rover.launch_date}</p>
+<p>Status: {newData.latest_photos[0].rover.status}</p>
       </div> */}
 
       {/* {img_src && (
