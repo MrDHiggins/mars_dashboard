@@ -7,9 +7,9 @@ import Header from "./components/header/Header";
 
 
 function App() {
-  const [data, setData] = useState('');
+  const [data, setData] = useState(null);
   const [selectedRover, setSelectedRover] = useState('');
-
+  console.log(selectedRover)
   useEffect(() => {
     const fetchData = async () => {
       if (selectedRover) {
@@ -25,7 +25,7 @@ function App() {
     <BrowserRouter>
         <Header setSelectedRover={setSelectedRover} />
         <Routes>
-          <Route path={`/${selectedRover}`} element={<About data={data} selectedRover={selectedRover} />} />
+        <Route path={`/${selectedRover}`} element={<About roverData={data} selectedRover={selectedRover} />} />
         </Routes>
     </BrowserRouter>
   );
