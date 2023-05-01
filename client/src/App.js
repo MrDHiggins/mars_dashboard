@@ -23,9 +23,15 @@ function App() {
 
   return (
     <BrowserRouter>
-        <Header setSelectedRover={setSelectedRover} />
+      <Header setSelectedRover={setSelectedRover} />
         <Routes>
-        <Route path={`/${selectedRover}`} element={<About roverData={data} selectedRover={selectedRover} />} />
+          {/*only onClick then display about Rover */}
+          {selectedRover && (
+            <Route 
+              path={`/${selectedRover}`} 
+              element={<About roverData={data} selectedRover={selectedRover} />} 
+            />
+          )}
         </Routes>
     </BrowserRouter>
   );
