@@ -25,10 +25,10 @@ function RoverSelection({ setSelectedRover }) {
   };
 
   const roverButtons = rovers.map((rover) => {
-    const selectedRoverBtn = selectedRover === rover ? 'bg-violet-200 text-red-500' : 'bg-gray-500 text-gray-100';
+    const selectedRoverBtn = selectedRover === rover ? 'bg-slate-400 text-w font-bold text-gray-700 border-t-2 border-gray-100' : 'bg-slate-500 text-gray-100';
     return (
       <button
-        className={`rounded hover:rounded border-2 border-green-500 hover:border-green-600 ${selectedRoverBtn} font-bold py-2 px-4 m-1`}
+        className={`rounded hover:rounded border-gray-400 hover:border-t-2 hover:border-b-2 font hover:border-white  ${selectedRoverBtn} hover:font-bold py-2 px-4 m-1`}
         key={rover}
         value={rover}
         onClick={(event) => handleRoverSelection(event, rovers)}
