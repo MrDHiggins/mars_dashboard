@@ -42,15 +42,27 @@ function About({ roverData, selectedRover }) {
   // console.log(imgSrcArray);
  
   return (
-    <div>
-      <h2>{selectedRover}</h2>
-      {/* {console.log(`My test: ${data}`)} */}
-      
-      <div>
-        <p>Rover Name: {name}</p>
-        <p>Landing Date: {landing_date}</p>
-        <p>Launch Date: {launch_date}</p>
-        <p>Status: {status}</p>
+    <div className="about__container flex bg-blue-500">      
+      <div className="rover__info__container w-1/4">
+        <div className="rover__name flex">
+          <h1 className="font-bold mr-1">Rover Name:</h1> 
+          <p>{name}</p>
+        </div>
+
+        <div className="rover__landing__date flex">
+          <h1 className="font-bold mr-1">Landing Date: </h1>
+          <p>{landing_date}</p>
+        </div>
+
+        <div className="rover__launch__date flex">
+          <h1 className="font-bold mr-1">Launch Date: </h1>
+          <p>{launch_date}</p>
+        </div>
+
+        <div className="rover__status flex">
+          <h1 className="font-bold mr-1">Status: </h1>
+          <p>{status}</p>
+        </div>
       </div>
 
       {/* {img_src && (
@@ -72,8 +84,8 @@ function About({ roverData, selectedRover }) {
             </div>
           )}
         </Carousel>
-      )} */}<div class='flex w-1/4 h-1/4'>
-            <Carousel class='flex w-1/4 h-1/4'>
+      )} */}<div className='carousel__container w-3/4 h-full'>
+            <Carousel>
               {photos.map((photo, index) => (
                 <div key={index}>
                   <img src={photo} alt={`Mars ${index}`} />
