@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 //Pages
 import About from "./pages/About";
 import Header from "./components/header/Header";
+import Home from "./pages/Home";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     <BrowserRouter>
       <Header setSelectedRover={setSelectedRover} />
         <Routes>
+          <Route path="/" element={<Home />} />
           {/*only onClick then display about Rover */}
           {selectedRover && (
             <Route 
