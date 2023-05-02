@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
 import Immutable from 'immutable';
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from 'react-router-dom';
 
 function RoverSelection({ setSelectedRover }) {
-  
   const store = Immutable.Map({
     user: Immutable.Map({ name: 'Martian' }),
     apod: '',
     rovers: Immutable.List(['Curiosity', 'Opportunity', 'Spirit']),
     selectedRover: '',
   });
-  
+
   const [rovers, setRover] = useState(store.get('rovers'));
+  const [selectedRover, setSelected] = useState(store.get('selectedRover'));
   const navigate = useNavigate();
-    
+
   const handleRoverSelection = (event, rovers) => {
     event.preventDefault();
     const selectedRover = event.target.value;
     setSelectedRover(selectedRover); // update selectedRover in the parent component
+    setSelected(selectedRover);
     const updatedRovers = rovers.set('selectedRover', selectedRover);
     setRover(updatedRovers);
     navigate(`/${selectedRover}`);
   };
 
   const roverButtons = rovers.map((rover) => {
+    const selectedRoverBtn = selectedRover === rover ? 'bg-violet-200 text-red-500' : 'bg-gray-500 text-gray-100';
     return (
       <button
-        className="rounded hover:rounded border-2 border-green-500 hover:border-green-600 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 m border-b-4 border-black"
+        className={`rounded hover:rounded border-2 border-green-500 hover:border-green-600 ${selectedRoverBtn} font-bold py-2 px-4 m-1`}
         key={rover}
         value={rover}
         onClick={(event) => handleRoverSelection(event, rovers)}
