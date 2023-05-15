@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.carousel .control-dots {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    margin-top: 40px;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
