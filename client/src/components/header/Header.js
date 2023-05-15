@@ -1,27 +1,40 @@
 import React from 'react';
 import RoverSelection from '../rover/RoverSelection';
+import { 
+  RocketLaunch,
+  Home,
+} from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 function Header( {setSelectedRover }) {
   return (
-    <div className='header__container text-center flex bg-slate-500'>
-      {/* Home Button */}
-      <div className="home_button_container flex">
-        <button className="home_button bg-slate-600 hover:bg-green-700 text-white font-bold py-2 px-4">
-          Home
-        </button>
-      </div>
-      {/* Salutation div */}
-      <div className='flex m-1 justify-center'>
-        <div className='m-1 '>
-          <div class='flex'>
-            <h1 class='text-3xl'>Welcome Martian</h1>
-          </div>
+    <div className='header__container flex bg-slate-500 w-full h-11 min-w-max'>
+      
+      {/* Home button */}
+      <div className='flex w-full'>
+        <div className='flex bg-slate-600 md:px-2 sm:px-0 md:w-[10%] w-[25%] lg:w-[5%] items-center justify-center hover:bg-green-700'>
+          <Link to="/" className="home_button flex flex-shrink text-white font-bold">
+            <Home/>
+          </Link>
+        </div>
+
+        {/* Salution div */}
+        <div className='flex items-center text-white text-xs'>
+          <p className='flex pl-2 md:px-2 lg:px-2 w-auto leading-none lg:text-xl md:text-base text-sm'>Hello Martian</p>
+          
+          <span className="material-icons-outlined px-1 flex text-xs">
+            <RocketLaunch/>
+          </span>
         </div>
       </div>
-      {/* Get Rover Buttons */}
-      <div className="rover__selection__container">
+      {/* End home button */}
+
+      <div className='flex items-center text-center justify-end w-[full] md:px-2 lg:px-6 lg:text-xl text-xs'>
         <RoverSelection setSelectedRover={setSelectedRover} />
       </div>
+
+      
+
     </div>
   )
 }
