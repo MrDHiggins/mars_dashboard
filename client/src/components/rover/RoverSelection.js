@@ -28,7 +28,7 @@ function RoverSelection({ setSelectedRover }) {
     const selectedRoverBtn = selectedRover === rover ? 'bg-slate-400 text-w font-bold text-gray-700 border-t-2 border-gray-100' : 'bg-slate-500 text-gray-100';
     return (
       <button
-        className={`rounded hover:rounded border-gray-400 hover:border-t-2 hover:border-b-2 font hover:border-white  ${selectedRoverBtn} hover:font-bold py-2 px-4 m-1`}
+        className={`flex-shrink rounded hover:rounded border-gray-400 hover:border-t-2 hover:border-b-2 font hover:border-white  ${selectedRoverBtn} hover:font-bold `}
         key={rover}
         value={rover}
         onClick={(event) => handleRoverSelection(event, rovers)}
@@ -39,9 +39,9 @@ function RoverSelection({ setSelectedRover }) {
   });
 
   return (
-    <div className="rover__selection__menu">
-      <div className="flex flex-col">
-        <div>{roverButtons}</div>
+    <div className="rover__selection__menu flex justify-center text-center">
+      <div>
+        <div className='flex gap-1 lg:gap-5'>{roverButtons}</div>
       </div>
     </div>
   );
