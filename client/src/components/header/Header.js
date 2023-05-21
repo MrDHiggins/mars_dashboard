@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function Header( {setSelectedRover }) {
   return (
-    <div className='header__container flex bg-slate-500 w-full h-11 min-w-max'>
+    <div className='header__container flex bg-slate-500 w-full h-11 min-w-max sticky top-0'>
       
       {/* Home button */}
       <div className='flex w-full'>
@@ -29,7 +29,7 @@ function Header( {setSelectedRover }) {
       </div>
       {/* End home button */}
 
-      <div className='flex items-center text-center justify-end w-[full] md:px-2 lg:px-6 lg:text-xl text-xs'>
+      <div className='flex items-center text-center justify-end w-full md:px-2 lg:px-6 lg:text-xl text-sm px-2'>
         <RoverSelection setSelectedRover={setSelectedRover} />
       </div>
 
