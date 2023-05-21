@@ -20,55 +20,76 @@ function About({ roverData, selectedRover }) {
       )
       .catch((error) => console.log(error));
   }, [roverName]);
-
+  
   return (
-    <div className="about__rover__container flex bg-blue-300 min-h-screen min-h-screen">
+    <div className="about__rover__container h-screen w-full pl-2 pr-2 pt-2 bg-gray-200">
 
-      {/* start rover__info */}
-      <div className="rover__info w-1/3 p-3">
-
-        <div className="rover__name">
-          <h1 className="font-bold mr-1">Rover Name:</h1>
-          <p>{name}</p>
-        </div>
-
-        <div className="rover__landing__date ">
-          <h1 className="font-bold mr-1">Landing Date: </h1>
-          <p>{landing_date}</p>
-        </div>
-
-        <div className="rover__launch__date ">
-          <h1 className="font-bold mr-1">Launch Date: </h1>
-          <p>{launch_date}</p>
-        </div>
-
-        <div className="rover__status ">
-          <h1 className="font-bold mr-1">Status: </h1>
-          <p>{status}</p>
-        </div>
+      <div className="rover__info__header bg-slate-500">
+        <p className="text-xl font-bold text-center text-white">Rover Type: {name}</p>
       </div>
-      {/* End rover__info */}
 
-      {/* start rover__carousel__container */}
-      <div className="rover__carousel__container w-2/3 bg-green-600 p-2">
+      <div className="flex w-[100%] h-[30%] md:w-[100%] md:h-[50%] lg:w-[100%] lg:h-[60%] justify-center">
+        <div className="h-[100%] w-[60%]">
+          {/* Rover image div */}
+          <div className="rover__image flex w-[100%] h-[100%] p-1">
+            <div className={` bg-${roverName.toLowerCase()} w-[100%] h-[100%] bg-cover md:bg-contain lg:bg-cover bg-no-repeat md:bg-no-repeat block bg-center md:bg-center lg:bg-center`}/>
+          </div>
+        </div>
 
-        <div className="rover__carousel">
-          <Carousel>
-            {photos.map((photo) => (
-              <div className="rover__carousel__img h-full" key={photo}>
-                <img
-                  className="object-fill h-[100%]"
-                  src={photo}
-                  alt={`Mars Rover img_src ID: ${photo}`}
-                />
+        {/* start rover__info */}
+        <div className="rover__info min-h-full md:ml-1 lg:ml-1 items-center justify-between lg:text-2xl">
+
+          <div className="rover__name">
+            <p className="font-bold mr-1">Rover Name:</p>
+            <p>{name}</p>
+          </div>
+
+          <div className="rover__landing__date ">
+            <p className="font-bold mr-1">Landing Date: </p>
+            <p>{landing_date}</p>
+          </div>
+
+          <div className="rover__launch__date ">
+            <p className="font-bold mr-1">Launch Date: </p>
+            <p>{launch_date}</p>
+          </div>
+
+          <div className="rover__status ">
+            <p className="font-bold mr-1">Status: </p>
+            <p>{status}</p>
+          </div>
+
+        </div>
+        {/* End rover__info */}
+      </div>
+      
+
+
+      <div className="rover__info__header bg-slate-500 mt-2">
+        <p className="text-xl font-bold text-center text-white">Images Captured</p>
+      </div>
+      
+      {/* Carousel container */}
+      <div className="carousel__container md:flex md:justify-center lg:flex lg:justify-center mt-2 bg-gray-200">
+        {/* start rover__carousel__container */}
+        <div className="rover__carousel__container md:w-1/2 lg:w-1/3 xl:w-1/4 p-2 justify-center">
+          <div className="rover__carousel">
+            <Carousel>
+              {photos.map((photo) => (
+                <div className="rover__carousel__img h-full" key={photo}>
+                  <img
+                    className="object-fill h-[100%] w-full"
+                    src={photo}
+                    alt={`Mars Rover img_src ID: ${photo}`}
+                  />
                 </div>
-            ))}
-            
-          </Carousel>
+              ))}
+            </Carousel>
+          </div>
         </div>
-
+        {/* End rover__carousel__container */}
       </div>
-      {/* End rover__carousel__container */}
+
     </div>
     // End about__rover__container
   );
