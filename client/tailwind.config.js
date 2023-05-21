@@ -9,6 +9,9 @@ module.exports = {
       backgroundImage: {
         'nasa-ofTheDay': "url('/src/assets/pages/home/Home_BG.jpg')",
         "EMCom": "url('/src/assets/pages/home/EMsize_comparison.jpg')",
+        "curiosity": "url('/src/assets/Rovers/curiosity.jpg')",
+        "opportunity": "url('/src/assets/Rovers/opportunity.jpg')",
+        "spirit": "url('/src/assets/Rovers/spirit.jpg')",
       },
       zIndex: {
         'z-1': '1'
