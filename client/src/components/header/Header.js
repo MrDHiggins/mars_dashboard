@@ -12,7 +12,7 @@ function Header( {setSelectedRover }) {
       
       {/* Home button */}
       <div className='flex w-full'>
-        <div className='flex bg-slate-600 md:px-2 sm:px-0 md:w-[10%] w-[25%] lg:w-[5%] items-center justify-center hover:bg-green-700'>
+        <div className='flex bg-slate-600 md:px-2 sm:px-0 md:w-[10%] w-[25%] lg:w-[5%] items-center justify-center hover:bg-slate-700'>
           <Link to="/" className="home_button flex flex-shrink text-white font-bold">
             <Home/>
           </Link>
