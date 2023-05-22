@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-//Pages
+//Import Pages
 import About from "./pages/About";
 import Header from "./components/header/Header";
+
+//Import Components
 import Home from "./pages/Home";
 
 
@@ -26,7 +28,7 @@ function App() {
     <BrowserRouter>
       <Header setSelectedRover={setSelectedRover} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home setSelectedRover={setSelectedRover} />} />
           {/*only onClick then display about Rover */}
           {selectedRover && (
             <Route 
