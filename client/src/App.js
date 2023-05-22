@@ -29,7 +29,6 @@ function App() {
       <Header setSelectedRover={setSelectedRover} />
         <Routes>
           <Route path="/" element={<Home setSelectedRover={setSelectedRover} />} />
-          {/*only onClick then display about Rover */}
           {selectedRover && (
             <Route 
               path={`/${selectedRover}`} 

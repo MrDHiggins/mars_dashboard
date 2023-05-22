@@ -30,13 +30,11 @@ function About({ roverData, selectedRover }) {
 
       <div className="flex w-[100%] h-[30%] md:w-[100%] md:h-[50%] lg:w-[100%] lg:h-[60%] justify-center">
         <div className="h-[100%] w-[60%]">
-          {/* Rover image div */}
           <div className="rover__image flex w-[100%] h-[100%] p-1">
             <div className={` bg-${roverName.toLowerCase()} w-[100%] h-[100%] bg-cover md:bg-contain lg:bg-cover bg-no-repeat md:bg-no-repeat block bg-center md:bg-center lg:bg-center`}/>
           </div>
         </div>
 
-        {/* start rover__info */}
         <div className="rover__info min-h-full md:ml-1 lg:ml-1 items-center justify-between lg:text-2xl">
 
           <div className="rover__name">
@@ -60,7 +58,6 @@ function About({ roverData, selectedRover }) {
           </div>
 
         </div>
-        {/* End rover__info */}
       </div>
       
 
@@ -69,9 +66,7 @@ function About({ roverData, selectedRover }) {
         <p className="text-xl font-bold text-center text-white">Images Captured</p>
       </div>
       
-      {/* Carousel container */}
       <div className="carousel__container md:flex md:justify-center lg:flex lg:justify-center mt-2 bg-gray-200">
-        {/* start rover__carousel__container */}
         <div className="rover__carousel__container md:w-1/2 lg:w-1/3 xl:w-1/4 p-2 justify-center">
           <div className="rover__carousel">
             <Carousel>
@@ -87,11 +82,9 @@ function About({ roverData, selectedRover }) {
             </Carousel>
           </div>
         </div>
-        {/* End rover__carousel__container */}
       </div>
 
     </div>
-    // End about__rover__container
   );
 }
 
