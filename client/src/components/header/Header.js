@@ -30,7 +30,7 @@ function Header( {setSelectedRover }) {
       {/* End home button */}
 
       <div className='flex items-center text-center justify-end w-full md:px-2 lg:px-6 lg:text-xl text-sm px-2'>
-        <RoverSelection setSelectedRover={setSelectedRover} />
+        <RoverSelection btnStacked={false} setSelectedRover={setSelectedRover} />
       </div>
 
       
