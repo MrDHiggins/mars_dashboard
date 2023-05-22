@@ -18,7 +18,7 @@ function RoverSelection({ setSelectedRover, btnStacked = false }) {
   const handleRoverSelection = (event, rovers) => {
     event.preventDefault();
     const selectedRover = event.target.value;
-    setSelectedRover(selectedRover); // update selectedRover in the parent component
+    setSelectedRover(selectedRover);
     setSelected(selectedRover);
     const updatedRovers = rovers.set('selectedRover', selectedRover);
     setRover(updatedRovers);
